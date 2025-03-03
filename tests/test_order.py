@@ -4,6 +4,7 @@ import pytest
 from data import PERSON_1, PERSON_2
 from pages.order_page import OrderPage
 
+from data import ExpectedText
 
 class TestOrder:
     @allure.title('Оформление заказа')
@@ -20,5 +21,4 @@ class TestOrder:
             testpersons['rental_period'],
             testpersons['comment']
         )
-        order_page.check_order_created()
-        assert order_page.check_order_created
+        assert order_page.check_order_created()

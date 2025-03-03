@@ -1,7 +1,6 @@
 import allure
 from selenium.webdriver.support.wait import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from conftest import driver
 
 class BasePage:
     def __init__(self, driver):
@@ -51,7 +50,8 @@ class BasePage:
 
     @allure.step('Дождаться появление текста элемента')
     def text_is_visible(self, locator, text):
-        WebDriverWait(self.driver, 15).until(EC.text_to_be_present_in_element(locator, text))
+        WebDriverWait(self.driver, 10).until(EC.text_to_be_present_in_element(locator, text))
+        return text
 
     @allure.step('Дождаться открытия окон')
     def wait_for_two_windows(self):

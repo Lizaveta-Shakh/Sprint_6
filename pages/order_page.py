@@ -43,9 +43,9 @@ class OrderPage(BasePage):
         self.click_on_element(OrderPageLocators.ORDER_BUTTON_ORDER_PAGE)
         self.click_on_element(OrderPageLocators.CONFIRMATION_BUTTON)
 
-    @allure.step('Ждем появления текста элемента')
+    @allure.step('Получаем и сравниваем текст элемента окна готовности заказа')
     def check_order_created(self):
-        self.text_is_visible(OrderPageLocators.ORDER_DONE, ExpectedText.ORDER_CREATED_TEXT)
+        return self.text_is_visible(OrderPageLocators.ORDER_DONE, ExpectedText.ORDER_CREATED_TEXT)
 
     @allure.step('Ждем появления кнопки просмотра заказа')
     def wait_find_element(self):
